@@ -1,4 +1,4 @@
-package com.example.demo.captcha;
+package com.baize.sb.captcha;
 
 public class CaptchaVO {
 

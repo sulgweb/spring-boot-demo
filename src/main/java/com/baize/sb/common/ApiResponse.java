@@ -1,4 +1,4 @@
-package com.example.demo.common;
+package com.baize.sb.common;
 
 public class ApiResponse<T> {
   public int code;

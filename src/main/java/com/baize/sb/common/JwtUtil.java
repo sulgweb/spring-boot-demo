@@ -1,4 +1,4 @@
-package com.example.demo.common;
+package com.baize.sb.common;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;

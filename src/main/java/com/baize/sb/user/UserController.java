@@ -1,7 +1,7 @@
-package com.example.demo.user;
+package com.baize.sb.user;
 
-import com.example.demo.user.dto.CreateUserDto;
-import com.example.demo.user.dto.LoginDto;
+import com.baize.sb.user.dto.CreateUserDto;
+import com.baize.sb.user.dto.LoginDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

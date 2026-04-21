@@ -1,4 +1,4 @@
-package com.example.demo.user;
+package com.baize.sb.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

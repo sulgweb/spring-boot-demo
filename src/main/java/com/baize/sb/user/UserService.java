@@ -1,8 +1,8 @@
-package com.example.demo.user;
+package com.baize.sb.user;
 
-import com.example.demo.common.JwtUtil;
-import com.example.demo.user.dto.CreateUserDto;
-import com.example.demo.user.dto.LoginDto;
+import com.baize.sb.common.JwtUtil;
+import com.baize.sb.user.dto.CreateUserDto;
+import com.baize.sb.user.dto.LoginDto;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

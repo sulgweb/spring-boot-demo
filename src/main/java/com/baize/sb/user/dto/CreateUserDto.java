@@ -1,4 +1,4 @@
-package com.example.demo.user.dto;
+package com.baize.sb.user.dto;
 
 public class CreateUserDto {
   public String name;

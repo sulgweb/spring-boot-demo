@@ -1,4 +1,4 @@
-package com.example.demo.auth;
+package com.baize.sb.auth;
 
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.captcha.CaptchaVO;
+import com.baize.sb.captcha.CaptchaVO;
 
 import cn.hutool.captcha.CaptchaUtil;
 import cn.hutool.captcha.LineCaptcha;
