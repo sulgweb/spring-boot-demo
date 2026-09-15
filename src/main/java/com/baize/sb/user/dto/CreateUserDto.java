@@ -1,10 +1,13 @@
 package com.baize.sb.user.dto;
 
-public class CreateUserDto {
-  public String name;
-  public Integer age;
-  public String password;
+import lombok.Data;
 
-  public String uuid; // 验证码id
-  public String code; // 验证码
+@Data
+public class CreateUserDto {
+  private String name;
+  private Integer age;
+  private String password;
+
+  private String uuid; // 验证码id
+  private String code; // 验证码
 }

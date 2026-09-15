@@ -2,15 +2,17 @@ package com.baize.sb.user;
 
 import com.baize.sb.user.dto.CreateUserDto;
 import com.baize.sb.user.dto.LoginDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
 
-  @Autowired
-  private UserService userService;
+  private final UserService userService;
+
+  public UserController(UserService userService) {
+    this.userService = userService;
+  }
 
   // 注册
   @PostMapping("/register")

@@ -3,7 +3,6 @@ package com.baize.sb.auth;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,10 +17,13 @@ import cn.hutool.captcha.LineCaptcha;
 @RequestMapping("/auth")
 public class AuthController {
 
-  @Autowired
-  private StringRedisTemplate redisTemplate;
+  private final StringRedisTemplate redisTemplate;
 
   private static final String CAPTCHA_KEY_PREFIX = "captcha:";
+
+  AuthController(StringRedisTemplate redisTemplate) {
+    this.redisTemplate = redisTemplate;
+  }
 
   @GetMapping("/captcha")
   public CaptchaVO captcha() {

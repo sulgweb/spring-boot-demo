@@ -1,22 +1,25 @@
 package com.baize.sb.common;
 
+import lombok.Data;
+
+@Data
 public class ApiResponse<T> {
-  public int code;
-  public String message;
-  public T data;
+  private int code;
+  private String message;
+  private T data;
 
   public static <T> ApiResponse<T> ok(T data) {
     ApiResponse<T> r = new ApiResponse<>();
-    r.code = 0;
-    r.message = "success";
-    r.data = data;
+    r.setCode(0);
+    r.setMessage("success");
+    r.setData(data);
     return r;
   }
 
   public static <T> ApiResponse<T> fail(String msg) {
     ApiResponse<T> r = new ApiResponse<>();
-    r.code = -1;
-    r.message = msg;
+    r.setCode(-1);
+    r.setMessage(msg);
     return r;
   }
 }

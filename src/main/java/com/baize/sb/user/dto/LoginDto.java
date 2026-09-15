@@ -1,9 +1,12 @@
 package com.baize.sb.user.dto;
 
-public class LoginDto {
-  public String name;
-  public String password;
+import lombok.Data;
 
-  public String uuid;
-  public String code;
+@Data
+public class LoginDto {
+  private String name;
+  private String password;
+
+  private String uuid;
+  private String code;
 }

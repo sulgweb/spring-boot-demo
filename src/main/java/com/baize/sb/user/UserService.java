@@ -29,12 +29,12 @@ public class UserService {
   // ========================
   public User create(CreateUserDto dto) {
 
-    verifyCaptcha(dto.uuid, dto.code);
+    verifyCaptcha(dto.getUuid(), dto.getCode());
 
     User user = new User();
-    user.setName(dto.name);
-    user.setAge(dto.age);
-    user.setPassword(passwordEncoder.encode(dto.password));
+    user.setName(dto.getName());
+    user.setAge(dto.getAge());
+    user.setPassword(passwordEncoder.encode(dto.getPassword()));
 
     return userRepository.save(user);
   }
@@ -44,12 +44,12 @@ public class UserService {
   // ========================
   public String login(LoginDto dto) {
 
-    verifyCaptcha(dto.uuid, dto.code);
+    verifyCaptcha(dto.getUuid(), dto.getCode());
 
-    User user = userRepository.findByName(dto.name)
+    User user = userRepository.findByName(dto.getName())
         .orElseThrow(() -> new RuntimeException("用户不存在"));
 
-    if (!passwordEncoder.matches(dto.password, user.getPassword())) {
+    if (!passwordEncoder.matches(dto.getPassword(), user.getPassword())) {
       throw new RuntimeException("密码错误");
     }
 
