@@ -2,6 +2,8 @@ package com.baize.sb.user;
 
 import com.baize.sb.user.dto.CreateUserDto;
 import com.baize.sb.user.dto.LoginDto;
+import com.baize.sb.user.vo.UserResponse;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,13 +18,13 @@ public class UserController {
 
   // 注册
   @PostMapping("/register")
-  public User create(@RequestBody CreateUserDto dto) {
-    return userService.create(dto);
+  public UserResponse create(@Valid @RequestBody CreateUserDto dto) {
+    return UserResponse.from(userService.create(dto));
   }
 
   // 登录
   @PostMapping("/login")
-  public String login(@RequestBody LoginDto dto) {
+  public String login(@Valid @RequestBody LoginDto dto) {
     return userService.login(dto);
   }
 }

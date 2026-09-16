@@ -1,0 +1,25 @@
+{
+  "groups": [
+    {
+      "name": "app",
+      "description": "Application-specific configuration."
+    },
+    {
+      "name": "app.jwt",
+      "description": "JWT token settings."
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.jwt.secret",
+      "type": "java.lang.String",
+      "description": "HMAC secret used to sign JWT tokens."
+    },
+    {
+      "name": "app.jwt.expiration-millis",
+      "type": "java.lang.Long",
+      "description": "JWT expiration time in milliseconds.",
+      "defaultValue": 86400000
+    }
+  ]
+}

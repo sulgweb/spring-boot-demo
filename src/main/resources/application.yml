@@ -14,12 +14,20 @@ spring:
       port: 6379
       password: redis123
       database: 0
+      repositories:
+        enabled: false
 
   jpa:
+    open-in-view: false
     hibernate:
       ddl-auto: update
     show-sql: true
 
 logging:
   level:
-    org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger: OFF
+    "[org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger]": OFF
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:baize-java-spring-boot-demo-longer-secret}
+    expiration-millis: 86400000

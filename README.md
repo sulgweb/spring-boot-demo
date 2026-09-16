@@ -40,3 +40,24 @@ docker compose down -v
 ### 接口文档
 
 http://localhost:8080/swagger-ui/index.html#/
+
+### 商品与购物车
+
+登录后请在需要认证的接口中传入 `Authorization: Bearer <token>`。
+
+- `GET /products`：分页查询已上架商品，支持 `keyword`、`page`、`size`
+- `GET /products/{productId}`：查询商品及启用的 SKU
+- `POST /admin/products`：创建商品和 SKU
+- `PUT /admin/products/{productId}`：修改商品基本信息
+- `PATCH /admin/products/{productId}/status`：修改商品状态
+- `POST /admin/products/{productId}/skus`：新增 SKU
+- `PATCH /admin/products/{productId}/skus/{skuId}`：局部修改 SKU，只传需要修改的字段
+- `GET /cart`：连表查询当前用户购物车
+- `POST /cart/items`：加入购物车，相同 SKU 自动合并数量
+- `PATCH /cart/items/{itemId}`：修改数量
+- `DELETE /cart/items/{itemId}`：删除购物车条目
+
+状态码约定：
+
+- 商品状态：`0` 草稿、`1` 上架、`2` 下架
+- SKU 状态：`0` 禁用、`1` 启用
